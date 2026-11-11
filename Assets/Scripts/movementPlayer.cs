@@ -20,6 +20,9 @@ public class movementPlayer : MonoBehaviour
 
     [Header("GroundCheck")]
     public float Playerheight;
+
+    public float PlayeSize;
+
     public LayerMask WhatIsGround;
     bool grounded;
 
@@ -47,10 +50,13 @@ public class movementPlayer : MonoBehaviour
         MyInput();
         SpeedControl();
 
+
+
         if (grounded)
             rb.linearDamping = grounddrag;
         else
             rb.linearDamping = 0f;
+
     }
 
     private void MyInput()
