@@ -15,6 +15,7 @@ public class movementPlayer : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+    public float airSpeed;
     bool readytojump;
 
     [Header("Crouching")]
@@ -70,7 +71,7 @@ public class movementPlayer : MonoBehaviour
 
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, Playerheight * 0.5f + 0.3f, WhatIsGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, Playerheight * 0.5f + 0.2f, WhatIsGround);
         MyInput();
         SpeedControl();
         StateHandler();
@@ -134,8 +135,8 @@ public class movementPlayer : MonoBehaviour
         else
         {
             state = MovementState.air;
+            //movespeed = airSpeed;
         }
-
     }
 
     private void FixedUpdate()
@@ -160,7 +161,8 @@ public class movementPlayer : MonoBehaviour
             rb.AddForce(moveDirection.normalized * movespeed * 10f, ForceMode.Force);
         //in air
         else if (!grounded)
-            rb.AddForce(moveDirection.normalized * movespeed * 10f * airMultiplier, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * movespeed * airMultiplier, ForceMode.Force);
+
 
         rb.useGravity = !OnSlope();
 
@@ -179,12 +181,14 @@ public class movementPlayer : MonoBehaviour
         else
         {
             Vector3 flatVel = new Vector3(rb.angularVelocity.x, 0f, rb.angularVelocity.z);
+            //Vector3 airvel = new Vector3(rb.angularVelocity.y, 0f);
 
             if (flatVel.magnitude > movespeed)
             {
                 Vector3 limitedVel = flatVel.normalized * movespeed;
                 rb.angularVelocity = new Vector3(limitedVel.x, rb.angularVelocity.y, limitedVel.z);
             }
+
         }
     }
 

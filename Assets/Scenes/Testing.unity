@@ -547,10 +547,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::movementPlayer
   walkspeed: 2
   runspeed: 7
-  grounddrag: 4
+  grounddrag: 6.5
   jumpForce: 6
   jumpCooldown: 0.1
-  airMultiplier: 0.05
+  airMultiplier: 1
+  airSpeed: 7
   crouchspeed: 1
   crouchYscale: 0.5
   jumpkey: 32
