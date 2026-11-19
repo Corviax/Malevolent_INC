@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class camaraPlayer : MonoBehaviour
 {
-
     public float sensX;
     public float sensY;
 
