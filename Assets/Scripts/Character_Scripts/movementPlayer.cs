@@ -164,8 +164,9 @@ public class movementPlayer : MonoBehaviour
         {
             rb.AddForce(GetSlopeMoveDirection() * movespeed * 10f, ForceMode.Force);
 
-            if(rb.linearVelocity.y > 0)
-                rb.AddForce(Vector3.down * 60f, ForceMode.Force);
+
+            if (rb.linearVelocity.y != 0)
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
         }
 
         //grounded
