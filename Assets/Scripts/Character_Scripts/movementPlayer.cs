@@ -166,7 +166,7 @@ public class movementPlayer : MonoBehaviour
 
 
             if (rb.linearVelocity.y != 0)
-                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+                rb.AddForce(Vector3.down * 60f, ForceMode.Force);
         }
 
         //grounded

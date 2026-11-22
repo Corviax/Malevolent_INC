@@ -81,7 +81,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646158744342294524}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -141,7 +141,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.22
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 70044941429253242}
   - component: {fileID: 2853054317240767036}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 4809188202129145112}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -10.936061, y: 1.26, z: 1.6781547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -212,7 +212,6 @@ Transform:
   - {fileID: 7374072727801102442}
   - {fileID: 3400429247532166590}
   - {fileID: 5852552861203110741}
-  - {fileID: 809259756862393591}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &70044941429253242
@@ -256,9 +255,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::movementPlayer
   walkspeed: 3
   runspeed: 7
-  grounddrag: 6.5
+  grounddrag: 7
   jumpForce: 6
-  jumpCooldown: 0.1
+  jumpCooldown: 0.25
   airMultiplier: 1
   airSpeed: 7
   crouchspeed: 2
@@ -272,7 +271,7 @@ MonoBehaviour:
     m_Bits: 1024
   maxSlopeAngle: 85.4
   stepRayUpper: {fileID: 9153400776744410487}
-  stepRayLower: {fileID: 8483162701883727213}
+  stepRayLower: {fileID: 0}
   stepHeight: 3
   stepSmooth: 2
   orientation: {fileID: 7374072727801102442}
@@ -476,37 +475,6 @@ MonoBehaviour:
   sensX: 800
   sensY: 800
   orientation: {fileID: 7374072727801102442}
---- !u!1 &8483162701883727213
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 809259756862393591}
-  m_Layer: 0
-  m_Name: stepRayLower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &809259756862393591
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8483162701883727213}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 485754731041588077}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9153400776744410487
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5852552861203110741}
   m_Layer: 0
-  m_Name: stepRayUpper
+  m_Name: PlayerStartingHeight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +500,7 @@ Transform:
   m_GameObject: {fileID: 9153400776744410487}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
