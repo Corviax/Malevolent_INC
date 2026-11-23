@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 public class ShootHandle : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 30f;
+
+    public float spread;
 
     public int maxAmmo = 45;
     private int currentAmmo;
@@ -19,6 +22,8 @@ public class ShootHandle : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     public Animator animator;
+    public TextMeshProUGUI text;
+    public RaycastHit rayHit;
 
     void Start()
     {
@@ -41,11 +46,18 @@ public class ShootHandle : MonoBehaviour
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+        {
+            StartCoroutine(Reload());
+        }
+
         if (Input.GetButton("Fire1")&& Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f/fireRate;
             Shoot();
         }
+
+        text.SetText(currentAmmo + "/" + maxAmmo);
     }
 
     IEnumerator Reload()
@@ -69,6 +81,11 @@ public class ShootHandle : MonoBehaviour
 
         currentAmmo--;
 
+        float x = Random.Range(-spread, spread);
+        float y = Random.Range(-spread, spread);
+
+        Vector3 direction = fpscam.transform.forward + new Vector3(x, y, 0);
+
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
@@ -85,8 +102,8 @@ public class ShootHandle : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 1f);
+            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            //Destroy(impactGO, 1f);
         }
     }
 }

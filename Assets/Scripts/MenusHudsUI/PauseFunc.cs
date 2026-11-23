@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class PauseFunc : MonoBehaviour
 {
-    private void Start()
-    {
-        container.SetActive(false);
-    }
     public GameObject container;
     void Update()
     {
@@ -14,6 +10,7 @@ public class PauseFunc : MonoBehaviour
             container.SetActive(true);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
     public void ResumeButton()
@@ -23,9 +20,14 @@ public class PauseFunc : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-
     public void MainMenuButton()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitButton()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }
