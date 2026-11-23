@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
-public class ShootHandle : MonoBehaviour
+public class ShootRifleHandle : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
@@ -40,6 +40,7 @@ public class ShootHandle : MonoBehaviour
     {
         if(isReloading)
             return;
+
         if(currentAmmo <= 0)
         {
             StartCoroutine(Reload());
@@ -81,13 +82,14 @@ public class ShootHandle : MonoBehaviour
 
         currentAmmo--;
 
+
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
 
         Vector3 direction = fpscam.transform.forward + new Vector3(x, y, 0);
 
         RaycastHit hit;
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+        if (Physics.Raycast(fpscam.transform.position, direction, out hit, range))
         {
             Debug.Log(hit.transform.name);
 
@@ -102,8 +104,8 @@ public class ShootHandle : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
-            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            //Destroy(impactGO, 1f);
+            GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(impactGo, 1f);
         }
     }
 }

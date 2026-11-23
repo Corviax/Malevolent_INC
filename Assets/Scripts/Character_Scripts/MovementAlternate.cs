@@ -11,17 +11,10 @@ public class MovementAlternate : MonoBehaviour
     public float runspeed;
     public float gravity = -9.81f;
     public float jumpHeight = 3;
-    float horizontalInput;
-    float verticalInput;
 
     public Transform playerBody;
 
     Vector3 moveDirection;
-
-    [Header("Keybinds")]
-    public KeyCode jumpkey = KeyCode.Space;
-    public KeyCode walkKey = KeyCode.LeftShift;
-    public KeyCode crouchkey = KeyCode.C;
 
 
     [Header("GroundCheck")]
@@ -61,6 +54,7 @@ public class MovementAlternate : MonoBehaviour
             velocity.y = -2f;
         }
 
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -76,20 +70,6 @@ public class MovementAlternate : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-
-
-
-        if (grounded && Input.GetKey(walkKey))
-        {
-            state = MovementState.walking;
-            movespeed = walkspeed;
-        }
-
-        else if (grounded)
-        {
-            state = MovementState.sprinting;
-            movespeed = runspeed;
-        }
 
     }
     //Codigo de referencia
