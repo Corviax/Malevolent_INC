@@ -262,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 2238687730459719793}
     - target: {fileID: 261531358530679404, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
       propertyPath: spread
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 261531358530679404, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
       propertyPath: impactEffect
@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 2238687730459719793}
     - target: {fileID: 2754371924835682507, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
       propertyPath: spread
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2754371924835682507, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
       propertyPath: impactEffect
@@ -283,10 +283,6 @@ PrefabInstance:
     - target: {fileID: 6218105447893885865, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
       propertyPath: m_Name
       value: Player_Character 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7168656337253815100, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
-      propertyPath: m_TargetDisplay
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8215189285864486520, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
       propertyPath: m_LocalPosition.x

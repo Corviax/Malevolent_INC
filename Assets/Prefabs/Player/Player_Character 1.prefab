@@ -2780,7 +2780,7 @@ MonoBehaviour:
   range: 100
   fireRate: 10
   impactForce: 100
-  spread: 0
+  spread: 1
   maxAmmo: 45
   reloadTime: 3
   fpscam: {fileID: 7168656337253815100}
@@ -12046,7 +12046,7 @@ MonoBehaviour:
   range: 100
   fireRate: 4
   impactForce: 70
-  spread: 15
+  spread: 2
   maxAmmo: 2
   reloadTime: 1
   fpscam: {fileID: 7168656337253815100}
