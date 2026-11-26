@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine;
+using UnityEngine.ProBuilder;
 public class ShootRifleHandle : MonoBehaviour
 {
     public float damage = 10f;
@@ -10,10 +11,15 @@ public class ShootRifleHandle : MonoBehaviour
 
     public float spread;
 
+    public int pelletsPerShot;
     public int maxAmmo = 45;
+    private int bulletsShot;
     private int currentAmmo;
+    private int AmmoShot;
     public float reloadTime = 1f;
     private bool isReloading = false;
+
+    //int bulletsLeft, bulletsShot;
 
     public Camera fpscam;
     public ParticleSystem MuzzleFlash;
@@ -25,6 +31,8 @@ public class ShootRifleHandle : MonoBehaviour
     public TextMeshProUGUI text;
     public RaycastHit rayHit;
 
+    bool readyToShoot;
+
     void Start()
     {
         currentAmmo = maxAmmo;
@@ -32,6 +40,7 @@ public class ShootRifleHandle : MonoBehaviour
 
     private void OnEnable()
     {
+        readyToShoot = true;
         isReloading = false;
         animator.SetBool("Reloading",false);
     }
@@ -59,6 +68,12 @@ public class ShootRifleHandle : MonoBehaviour
         }
 
         text.SetText(currentAmmo + "/" + maxAmmo);
+
+        if (readyToShoot && isReloading && currentAmmo > 0)
+        {
+            bulletsShot = pelletsPerShot;
+            Shoot();
+        }
     }
 
     IEnumerator Reload()
@@ -78,9 +93,12 @@ public class ShootRifleHandle : MonoBehaviour
     }
     void Shoot()
     {
+        readyToShoot = false;
+
         MuzzleFlash.Play();
 
         currentAmmo--;
+        bulletsShot--;
 
 
         float x = Random.Range(-spread, spread);
@@ -107,5 +125,8 @@ public class ShootRifleHandle : MonoBehaviour
             GameObject impactGo = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGo, 1f);
         }
+
+        if (bulletsShot > 0 && currentAmmo > 0)
+            Invoke("Shoot", fireRate);
     }
 }

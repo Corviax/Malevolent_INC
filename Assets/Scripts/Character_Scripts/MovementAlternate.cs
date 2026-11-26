@@ -34,7 +34,6 @@ public class MovementAlternate : MonoBehaviour
     public Transform ceilingCheck;
     public float groundDistance = 0.4f;
     private float ceilingDistance = 0.3f;
-    Vector3 CeilingAboveC;
     Vector3 velocity;
 
     public float Playerheight;
@@ -61,7 +60,7 @@ public class MovementAlternate : MonoBehaviour
 
         if(grounded && velocity.y < 0)
         {
-            velocity.y = 0f;
+            velocity.y = -2f;
         }
 
         ceiling = Physics.CheckSphere(ceilingCheck.position,ceilingDistance, WhatIsGround);
@@ -81,7 +80,7 @@ public class MovementAlternate : MonoBehaviour
 
         if(Input.GetButton("Jump") && grounded)
         {
-        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -93,15 +92,11 @@ public class MovementAlternate : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, CrouchHeight, transform.localScale.z);
             Playerheight = CrouchHeight;
 
-            _croch = 0;
-
         }
 
         if (Input.GetKeyUp(crouchkey))
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-
-            _croch = 1;
         }
 
     }
