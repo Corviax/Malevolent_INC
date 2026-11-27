@@ -305,22 +305,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4391142592328034479, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
-      propertyPath: gravity
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391142592328034479, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
-      propertyPath: walkSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391142592328034479, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
-      propertyPath: crouchSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391142592328034479, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
-      propertyPath: sprintSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391142592328034479, guid: a88359f8a0545274cbea1c1225b35784, type: 3}
       propertyPath: children.Array.size
       value: 1
       objectReference: {fileID: 0}
