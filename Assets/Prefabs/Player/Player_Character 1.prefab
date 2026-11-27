@@ -2827,6 +2827,7 @@ MonoBehaviour:
   fireRate: 10
   impactForce: 70
   spread: 0
+  pelletsPerShot: 0
   maxAmmo: 45
   reloadTime: 2
   fpscam: {fileID: 7168656337253815100}
@@ -11729,7 +11730,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.92, y: 1.712, z: -14.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7113423585246681794}
   - {fileID: 2171430009394881598}
@@ -11793,7 +11794,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.2
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.1
@@ -11825,7 +11826,7 @@ MonoBehaviour:
   playerBody: {fileID: 8215189285864486520}
   groundCheck: {fileID: 5578278576252309547}
   ceilingCheck: {fileID: 5931653374854309552}
-  groundDistance: 0.4
+  groundDistance: 0.3
   Playerheight: 2
   CrouchHeight: 0.5
   WhatIsGround:
@@ -12131,6 +12132,7 @@ MonoBehaviour:
   fireRate: 8
   impactForce: 120
   spread: 0.1
+  pelletsPerShot: 0
   maxAmmo: 2
   reloadTime: 0.75
   fpscam: {fileID: 7168656337253815100}

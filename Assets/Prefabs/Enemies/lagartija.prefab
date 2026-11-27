@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &626703164863845790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.3611982
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000012489909
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.448235
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3336823288522064828, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 127a8be4b982a7641926583f504fcd20, type: 2}
+    - target: {fileID: -1781628882611861087, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 127a8be4b982a7641926583f504fcd20, type: 2}
+    - target: {fileID: 919132149155446097, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
+      propertyPath: m_Name
+      value: lagartija
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a9e2fbe3d2e45084080e0dfcaca86000, type: 3}
